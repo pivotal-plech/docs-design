@@ -1,0 +1,15 @@
+@import "variables";
+
+.subnav {
+  position: fixed;
+  z-index: 10;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  width: 17.375em;
+  width: 375px;
+  background: $dark-11;
+}

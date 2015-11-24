@@ -1,0 +1,5 @@
+---
+applications:
+- name: pdocs-proto
+  mem: 500MB
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack

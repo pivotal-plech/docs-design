@@ -1,0 +1,13 @@
+@import "variables";
+
+.panel-link {
+  .panel {
+    transition: background-color 250ms linear;
+  }
+  &:hover {
+    .panel {
+      background-color: $dark-11;
+    }
+    text-decoration: none;
+  }
+}
