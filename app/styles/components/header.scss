@@ -4,6 +4,10 @@
   background-color: $dark-2;
   display: flex;
   align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
   .logo, .main-nav {
     flex: 1;
   }
@@ -14,7 +18,12 @@
 }
 
 .logo {
-  max-width: 250px;
+  max-width: 375px;
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .product-nav {

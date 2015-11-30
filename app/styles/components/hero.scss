@@ -1,7 +1,9 @@
 @import "variables";
 
 .hero {
+  height: 50vh;
+  display: flex;
+  align-items: center;
   background-color: $dark-1;
   color: $dark-11;
-  padding: 100px;
 }
