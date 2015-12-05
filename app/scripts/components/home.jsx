@@ -10,10 +10,8 @@ var BasicPanelAlt = require('pui-react-panels').BasicPanelAlt;
 
 var Header = require('./header');
 
-// Firebase
 var Firebase = require("firebase");
 var ReactFireMixin = require("reactfire");
-
 
 var Home = React.createClass({
 

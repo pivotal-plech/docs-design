@@ -11,16 +11,24 @@
   -webkit-overflow-scrolling: touch;
   width: 17.375em;
   width: 375px;
-  background: $neutral-11;
+  background: $dark-11;
   color: $dark-1;
   border-right: 1px solid $dark-10;
   ul.product-docs-toc {
     list-style: none;
     padding: 0;
+    height: calc(100% - 225px);
+    margin: 0;
+    overflow: auto;
     li {
       font-size: 14px;
       color: $dark-4;
-      padding: 8px 15px;
+      padding: 12px 15px;
+      transition: background-color 150ms ease-in;
+      &:hover {
+        background-color: rgba(0,0,0,.05);
+        cursor: pointer;
+      }
     }
   }
 }
