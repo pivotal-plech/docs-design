@@ -13,6 +13,7 @@ var Header = require('./header');
 var Firebase = require("firebase");
 var ReactFireMixin = require("reactfire");
 
+
 var Home = React.createClass({
 
   mixins: [ReactFireMixin, Navigation],

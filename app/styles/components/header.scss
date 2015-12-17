@@ -1,13 +1,14 @@
 @import "variables";
 
 .header {
-  background-color: $dark-2;
+  background-color: $dark-1;
   display: flex;
   align-items: center;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
+  z-index: 1000;
   .logo, .main-nav {
     flex: 1;
   }
@@ -28,8 +29,8 @@
 
 .product-nav {
   flex: 1;
-  height: 50px;
-  line-height: 46px;
+  height: 64px;
+  line-height: 64px;
   background-color: $dark-3;
   button {
     color: white !Important;

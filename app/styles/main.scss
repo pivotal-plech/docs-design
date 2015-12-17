@@ -53,7 +53,6 @@
   padding: 0;
 }
 
-
 .dropdown-toggle.btn.btn-link {
   height: 50px;
   display: flex;
@@ -118,9 +117,9 @@
 
 .product-docs {
   padding-left: 375px;
-  padding-top: 53px;
+  padding-top: 64px;
   .page-header {
-    padding: 50px;
+    padding: 25px;
     border-bottom: 1px solid $dark-10;
     margin: 0;
   }
@@ -129,15 +128,25 @@
   }
 }
 
+@media (max-width: 700px) {
+  .product-docs {
+    padding-left: 0;
+  }
+}
+
 .main-nav {
   margin-right: 65px;
 }
 
+@media (max-width: 700px) {
+  .main-nav {
+    display: none;
+  }
+}
 
 .search {
-  height: 50px;
-  width: 50px;
-  background-color: rgba(0,0,0,.2);
+  height: 64px;
+  width: 64px;
   position: absolute;
   right: 0;
   top: 0;
@@ -224,3 +233,46 @@
     font-size: 14px;
   }
 }
+
+.docs-search {
+  position: relative;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0,0,0,.4);
+  left: 15px;
+}
+
+.search-results-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.search-result-item {
+  padding: 15px;
+  border-bottom: 1px solid $dark-10;
+  &:hover {
+    transition: background-color 250ms linear;
+    background-color: $dark-11;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.search-result-title {
+  margin: 0;
+  color: $accent-3;
+}
+
+.search-result-description {
+  margin: 0;
+}
+

@@ -3,7 +3,7 @@
 .subnav {
   position: fixed;
   z-index: 10;
-  top: 50px;
+  top: 64px;
   left: 0;
   bottom: 0;
   overflow-y: auto;
@@ -17,18 +17,24 @@
   ul.product-docs-toc {
     list-style: none;
     padding: 0;
-    height: calc(100% - 225px);
+    height: calc(100%);
     margin: 0;
     overflow: auto;
     li {
       font-size: 14px;
       color: $dark-4;
-      padding: 12px 15px;
+      padding: 10px 25px;
       transition: background-color 150ms ease-in;
       &:hover {
         background-color: rgba(0,0,0,.05);
         cursor: pointer;
       }
     }
+  }
+}
+
+@media (max-width: 700px) {
+  .subnav {
+    display: none;
   }
 }
