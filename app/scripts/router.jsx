@@ -6,11 +6,13 @@ var DefaultRoute = Router.DefaultRoute;
 var Layout = require('./components/layout');
 var Home = require('./components/home');
 var Product = require('./components/product/product');
+var Balancer = require('./components/balancer');
 
 var routes = (
   <Route name="layout" path="/" handler={Layout}>
     <DefaultRoute handler={Home} />
     <Route handler={Product} name="/product" />
+    <Route handler={Balancer} name="/balancer" />
   </Route>
 );
 

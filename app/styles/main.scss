@@ -134,10 +134,6 @@
   }
 }
 
-.main-nav {
-  margin-right: 65px;
-}
-
 @media (max-width: 700px) {
   .main-nav {
     display: none;
@@ -161,9 +157,7 @@
 }
 
 .docs-search {
-  box-shadow: 0 2px 2px rgba(0,0,0,.05);
-  background-color: white;
-  border-bottom: 1px solid $dark-10;
+  background-color: $dark-10;
   height: 50px;
   display: flex;
   padding: 0 15px;
@@ -193,7 +187,6 @@
     }
   }
 }
-
 
 .docs-software-footer {
   box-shadow: 0 -2px 2px rgba(0,0,0,.05);
@@ -254,6 +247,10 @@
 }
 
 .search-result-item {
+}
+
+.search-result-link {
+  display: block;
   padding: 15px;
   border-bottom: 1px solid $dark-10;
   &:hover {

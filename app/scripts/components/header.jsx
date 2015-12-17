@@ -33,9 +33,6 @@ var Header = React.createClass({
               <span className="type-dark-11">Downloads</span>
             </ListItem>
             <ListItem>
-              <span className="type-dark-11 active">Documentation</span>
-            </ListItem>
-            <ListItem>
               <span className="type-dark-11">Support</span>
             </ListItem>
           </InlineList>
