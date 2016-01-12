@@ -121,7 +121,7 @@ var Subnav = React.createClass({
             </div>
           </div>
 
-          <ul className="product-docs-toc">
+          <ul className="product-docs-toc hidden">
             <li>
               <a href="#/product/cloud_foundry">Getting Started with Pivotal Cloud Foundry®</a>
             </li>
