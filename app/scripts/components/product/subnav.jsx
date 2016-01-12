@@ -1,43 +1,189 @@
 var React = require('react');
+var Navigation = require('react-router').Navigation;
+
+// Firebase
+var Firebase = require("firebase");
+var ReactFireMixin = require("reactfire");
+
+// My Components
+var Header = require('../header');
+var Subnav = require('./subnav');
+var PageHeader = require('./pageHeader');
+
+// PUI
+var LinkDropdown = require('pui-react-dropdowns').LinkDropdown;
+var DropdownItem = require('pui-react-dropdowns').DropdownItem;
+var DefaultButton = require('pui-react-buttons').DefaultButton;
+var TileLayout = require('pui-react-tile-layout');
+var BasicPanelAlt = require('pui-react-panels').BasicPanelAlt;
+var Media = require('pui-react-media').Media;
+var Flag = require('pui-react-media').Flag;
 var UnorderedList = require('pui-react-lists').UnorderedList;
 var ListItem = require('pui-react-lists').ListItem;
 
+var LinkDropdown = require('pui-react-dropdowns').LinkDropdown;
+var DropdownItem = require('pui-react-dropdowns').DropdownItem;
+
+  var DropdownToggle =
+    <div className="subnav-title">
+      <h2 className="h5 type-dark-1 em-default mvn">
+        <span className="product-name">Pivotal Cloud Foundry</span>
+        <span className="type-dark-4 type-sm mll">v1.6.0.0 <i className="fa fa-angle-down h4 mvn mlm"></i></span>
+      </h2>
+    </div>;
+
 var Subnav = React.createClass({
+  mixins: [ReactFireMixin, Navigation],
+
+  getInitialState: function() {
+    return {
+      searchResults: []
+    };
+  },
+
+  componentWillMount: function() {
+    var myFirebaseRef = new Firebase("https://pivotal-docs.firebaseio.com/search-results");
+    this.bindAsArray(myFirebaseRef, "searchResults");
+  },
+
+  componentDidMount: function() {
+    $('.search-button').click( function() {
+      $('#search-results').toggleClass('hidden');
+    });
+  },
 
   render: function() {
 
+    var searchResults = this.state.searchResults.map(function(searchResult) {
+
+      return (
+        <li className="search-result-item">
+          <a href="#/balancer" className="search-result-link">
+            <h3 className="search-result-title h5" key={ searchResult['.key'] }>
+              { searchResult.searchTitle }
+            </h3>
+            <p className="search-result-description type-sm type-dark-3">
+              { searchResult.searchDescription }
+            </p>
+          </a>
+        </li>
+      );
+
+    });
+
     return (
-      <div className="subnav">
-        <ul className="product-docs-toc">
-          <li>Getting Started with Pivotal Cloud Foundry®</li>
-          <li>Pivotal Cloud Foundry® Docs Home</li>
-          <li>Getting Started with Pivotal Cloud Foundry®</li>
-          <li>PCF on Amazon Web Services (AWS)</li>
-          <li>PCF on OpenStack</li>
-          <li>PCF on vSphere and vCloud Air</li>
-          <li>Using Ops Manager</li>
-          <li>Elastic Runtime Concepts</li>
-          <li>Operating Elastic Runtime</li>
-          <li>Using the Apps Manager</li>
-          <li>Deploying Applications</li>
-          <li>Buildpacks</li>
-          <li>Custom Services</li>
-          <li>Creating PCF Product Tiles</li>
-          <li>Logging and Metrics</li>
-          <li>Release Notes and Known Issues</li>
-        </ul>
-        <div className="docs-software-footer hidden">
-          <UnorderedList unstyled spacing="l">
-            <ListItem>
-              <a href="#"><i className="fa fa-file-pdf-o mrl type-dark-5"></i>Download 1.6.0.0 Documentation</a>
-            </ListItem>
-            <ListItem>
-              <a href="#"><i className="fa fa-download mrl type-dark-5"></i>Download PCF 1.6.0.0</a>
-            </ListItem>
-            <ListItem>
-              <a href="#"><i className="fa fa-support mrl type-dark-5"></i>Support and Troubleshooting PCF 1.6.0.0</a>
-            </ListItem>
-          </UnorderedList>
+      <div className="subnav-wrap">
+        <div className="subnav-navigation">
+          <a href="#">Menu</a>
+        </div>
+        <div className="subnav">
+          <LinkDropdown title={DropdownToggle} className="mvn h4">
+            <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">
+              <span>Pivotal Cloud Foundry</span>
+              <span>v1.6.0.0</span>
+            </DropdownItem>
+            <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">
+              <span>Pivotal Cloud Foundry</span>
+              <span>v1.5.0.0</span>
+            </DropdownItem>
+            <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">
+              <span>Pivotal Cloud Foundry</span>
+              <span>v1.4.0.0</span>
+            </DropdownItem>
+            <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">
+              <span>Pivotal Cloud Foundry</span>
+              <span>v1.3.0.0</span>
+            </DropdownItem>
+            <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">
+              <span>Pivotal Cloud Foundry</span>
+              <span>v1.2.0.0</span>
+            </DropdownItem>
+          </LinkDropdown>
+          <div className="docs-search">
+            <div className="docs-search-wrap">
+              <i className="fa fa-search search-icon"></i>
+              <input placeholder="Search PCF 1.6.0.0" className="docs-search-input" />
+              <button className="search-button">Search</button>
+            </div>
+            <div id="search-results" className="search-results hidden">
+              <ul className="search-results-list">
+                <li className="top-results pal">
+                  <a href="#">
+                    <span>Show All Results</span>
+                    <i className="fa fa-angle-right"></i>
+                  </a>
+                </li>
+                <li>
+                  <hr className="mvn" />
+                </li>
+                { searchResults }
+              </ul>
+            </div>
+          </div>
+
+          <ul className="product-docs-toc">
+            <li>
+              <a href="#/product/cloud_foundry">Getting Started with Pivotal Cloud Foundry®</a>
+            </li>
+            <li>
+              <a href="#">Pivotal Cloud Foundry® Docs Home</a>
+            </li>
+            <li>
+              <a href="#">Getting Started with Pivotal Cloud Foundry®</a>
+            </li>
+            <li>
+              <a href="#">PCF on Amazon Web Services (AWS)</a>
+            </li>
+            <li>
+              <a href="#">PCF on OpenStack</a>
+            </li>
+            <li>
+              <a href="#">PCF on vSphere and vCloud Air</a>
+            </li>
+            <li>
+              <a href="#">Using Ops Manager</a>
+            </li>
+            <li>
+              <a href="#">Elastic Runtime Concepts</a>
+            </li>
+            <li>
+              <a href="#">Operating Elastic Runtime</a>
+            </li>
+            <li>
+              <a href="#">Using the Apps Manager</a>
+            </li>
+            <li>
+              <a href="#">Deploying Applications</a>
+            </li>
+            <li>
+              <a href="#">Buildpacks</a>
+            </li>
+            <li>
+              <a href="#">Custom Services</a>
+            </li>
+            <li>
+              <a href="#">Creating PCF Product Tiles</a>
+            </li>
+            <li>
+              <a href="#">Logging and Metrics</a>
+            </li>
+            <li>
+              <a href="#">Release Notes and Known Issues</a>
+            </li>
+          </ul>
+          <div className="docs-software-footer hidden">
+            <UnorderedList unstyled spacing="l">
+              <ListItem>
+                <a href="#"><i className="fa fa-file-pdf-o mrl type-dark-5"></i>Download 1.6.0.0 Documentation</a>
+              </ListItem>
+              <ListItem>
+                <a href="#"><i className="fa fa-download mrl type-dark-5"></i>Download PCF 1.6.0.0</a>
+              </ListItem>
+              <ListItem>
+                <a href="#"><i className="fa fa-support mrl type-dark-5"></i>Support and Troubleshooting PCF 1.6.0.0</a>
+              </ListItem>
+            </UnorderedList>
+          </div>
         </div>
       </div>
     );

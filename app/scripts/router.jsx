@@ -11,7 +11,7 @@ var Balancer = require('./components/balancer');
 var routes = (
   <Route name="layout" path="/" handler={Layout}>
     <DefaultRoute handler={Home} />
-    <Route handler={Product} name="/product" />
+    <Route handler={Product} name="/product" path="/product/:name" />
     <Route handler={Balancer} name="/balancer" />
   </Route>
 );

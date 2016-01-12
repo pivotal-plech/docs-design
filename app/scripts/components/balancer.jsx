@@ -7,6 +7,7 @@ var ReactFireMixin = require("reactfire");
 // My Stuff
 var Header = require('./header');
 var Subnav = require('./product/subnav');
+var PageHeader = require('./product/pageHeader');
 
 // PUI
 var LinkDropdown = require('pui-react-dropdowns').LinkDropdown;
@@ -42,27 +43,7 @@ var Balancer = React.createClass({
         <Header />
         <Subnav />
         <div className="product-docs">
-          <div className="page-header">
-            <p className="mvn type-dark-5 em-alt type-sm">Version: 1.6.0.0 <span>- Changelog</span></p>
-            <Flag leftImage={pcfLogo}>
-              <h1 className="em-low mvn type-dark-1">Pivotal Cloud Foundry Docs</h1>
-            </Flag>
-            <LinkDropdown title={DropdownToggle} className="mvn h4 hidden">
-              <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">v1.6.0.0</DropdownItem>
-              <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">v1.5.0.0</DropdownItem>
-              <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">v1.4.0.0</DropdownItem>
-              <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">v0.3.0.0</DropdownItem>
-              <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">v1.2.0.0</DropdownItem>
-            </LinkDropdown>
-          </div>
-          <div className="docs-search">
-            <input placeholder="Search PCF 1.6.0.0" className="docs-search-input" />
-            <div id="search-results" className="hidden search-results">
-              <ul className="search-results-list">
-                <li className="search-all-results">View All Results</li>
-              </ul>
-            </div>
-          </div>
+          <PageHeader />
           <div className="docs-content pvxxl phxl">
             <h1 className="title type-dark-1 em-low mvn">Using Your Own Load Balancer</h1>
             <hr />
