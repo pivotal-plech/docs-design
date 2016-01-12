@@ -46,12 +46,6 @@ var Subnav = React.createClass({
     this.bindAsArray(myFirebaseRef, "searchResults");
   },
 
-  componentDidMount: function() {
-    $('.search-button').click( function() {
-      $('#search-results').toggleClass('hidden');
-    });
-  },
-
   render: function() {
 
     var searchResults = this.state.searchResults.map(function(searchResult) {
@@ -77,51 +71,8 @@ var Subnav = React.createClass({
           <a href="#">Menu</a>
         </div>
         <div className="subnav">
-          <LinkDropdown title={DropdownToggle} className="mvn h4">
-            <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">
-              <span>Pivotal Cloud Foundry</span>
-              <span>v1.6.0.0</span>
-            </DropdownItem>
-            <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">
-              <span>Pivotal Cloud Foundry</span>
-              <span>v1.5.0.0</span>
-            </DropdownItem>
-            <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">
-              <span>Pivotal Cloud Foundry</span>
-              <span>v1.4.0.0</span>
-            </DropdownItem>
-            <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">
-              <span>Pivotal Cloud Foundry</span>
-              <span>v1.3.0.0</span>
-            </DropdownItem>
-            <DropdownItem href="http://media.giphy.com/media/TlK63EQERmiAVzMEgO4/giphy.gif">
-              <span>Pivotal Cloud Foundry</span>
-              <span>v1.2.0.0</span>
-            </DropdownItem>
-          </LinkDropdown>
-          <div className="docs-search">
-            <div className="docs-search-wrap">
-              <i className="fa fa-search search-icon"></i>
-              <input placeholder="Search PCF 1.6.0.0" className="docs-search-input" />
-              <button className="search-button">Search</button>
-            </div>
-            <div id="search-results" className="search-results hidden">
-              <ul className="search-results-list">
-                <li className="top-results pal">
-                  <a href="#">
-                    <span>Show All Results</span>
-                    <i className="fa fa-angle-right"></i>
-                  </a>
-                </li>
-                <li>
-                  <hr className="mvn" />
-                </li>
-                { searchResults }
-              </ul>
-            </div>
-          </div>
 
-          <ul className="product-docs-toc">
+          <ul className="product-docs-toc hidden">
             <li>
               <a href="#/product/cloud_foundry">Getting Started with Pivotal Cloud Foundry®</a>
             </li>

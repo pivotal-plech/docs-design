@@ -37,9 +37,6 @@ var Header = React.createClass({
             </ListItem>
           </InlineList>
         </nav>
-        <div className="search hidden">
-          {SearchIcon}
-        </div>
       </div>
     );
   }

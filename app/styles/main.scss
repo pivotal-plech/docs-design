@@ -148,21 +148,8 @@ a:hover {
   }
 }
 
-
 .search {
-  height: 64px;
-  width: 64px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  svg {
-    margin: 0 auto;
-    path {
-      fill: $dark-11;
-    }
-  }
+  position: relative;
 }
 
 .docs-search {
@@ -171,16 +158,17 @@ a:hover {
   display: flex;
   padding: 0;
   align-items: center;
-  border-bottom: 1px solid $dark-9;
-  .docs-search-input {
-    height: 100%;
-    width: 100%;
-    padding: 0 15px 0 35px;
-    position: relative;
-    border: none;
-    &:focus {
-      outline: none;
-    }
+  border: none;
+}
+
+.docs-search-input {
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding: 5px 5px 5px 40px;
+  background: transparent;
+  &:focus {
+    outline: none;
   }
 }
 
@@ -188,6 +176,8 @@ a:hover {
   position: relative;
   width: 100%;
   height: 100%;
+  border: 1px solid $dark-9;
+  border-radius: 1000px;
 }
 
 .search-button {
@@ -260,7 +250,7 @@ a:hover {
   top: 100%;
   background-color: white;
   box-shadow: 0 0 4px rgba(0,0,0,.4);
-  left: 0;
+  right: 0;
   z-index: 100;
 }
 
