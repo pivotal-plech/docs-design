@@ -35,6 +35,9 @@ var Header = React.createClass({
             <ListItem>
               <span className="type-dark-11">Support</span>
             </ListItem>
+            <ListItem>
+              <span className="type-dark-11"><i className="fa fa-search type-dark-11"></i></span>
+            </ListItem>
           </InlineList>
         </nav>
       </div>

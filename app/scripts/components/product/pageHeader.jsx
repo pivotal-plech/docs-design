@@ -91,7 +91,7 @@ var PageHeader = React.createClass({
               <div id="search-results" className="search-results hidden" style={{width: "350px"}}>
                 <ul className="search-results-list">
                   <li className="top-results pal">
-                    <a href="#">
+                    <a href="#/search-results">
                       <span>Show All Results</span>
                       <i className="fa fa-angle-right"></i>
                     </a>

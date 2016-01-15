@@ -45,7 +45,7 @@ var Balancer = React.createClass({
         <div className="product-docs">
           <PageHeader />
           <div className="docs-content pvxxl phxl">
-            <h1 className="title type-dark-1 em-low mvn">Using Your Own Load Balancer</h1>
+            <h1 className="type-dark-1 mvn h2">Using Your Own Load Balancer</h1>
             <hr />
             <div className="quick-links">
               <ul>

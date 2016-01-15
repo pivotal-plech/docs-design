@@ -3,7 +3,6 @@ var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
 var Navigation = require('react-router').Navigation;
 
-
 var Hero = require('./hero.jsx');
 var ProductTile = require('./productTile.jsx');
 
