@@ -14,9 +14,6 @@ Pivotal Documentation was designed to provide education and guides to install an
 - Solving some of the biggest usability issues with Docs (Search and Navigation) based on previous usability research findings
 - Making Data Docs feel a bit more like other Pivotal Docs
 
-##Goals of this Prototype
-This prototype is built for the purpose of think aloud usability tests. The script is [available here](https://docs.google.com/a/pivotal.io/document/d/1apLKEXz9O1egvciV3QdaBI-UP2ZnssE3th_o30QuvSI/edit?usp=sharing). The recordings are [available here](https://lookback.io/pivotal-cloud-foundry/pivotal-docs). Send a note to `shurst@pivotal.io` for access.
-
 ##Success Criteria
 How do we know if we were successful?
 List design tests here:
@@ -42,3 +39,8 @@ this will:
 1. `cd dist/`
 2. `cf push` based on the manifest.yml
 3. `cd ../`
+
+---
+
+###Goals of this Prototype
+This prototype is built for the purpose of think aloud usability tests. The script is [available here](https://docs.google.com/a/pivotal.io/document/d/1apLKEXz9O1egvciV3QdaBI-UP2ZnssE3th_o30QuvSI/edit?usp=sharing). The recordings are [available here](https://lookback.io/pivotal-cloud-foundry/pivotal-docs). Send a note to `shurst@pivotal.io` for access.
