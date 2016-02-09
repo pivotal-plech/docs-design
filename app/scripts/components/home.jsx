@@ -48,7 +48,7 @@ var Home = React.createClass({
           <div className="container">
             <h1 className="em-low">Pivotal Software</h1>
             <hr />
-            <TileLayout columns={3}>
+            <TileLayout columns={{xs: 1, sm: 2, md: 3}}>
               { products }
             </TileLayout>
           </div>

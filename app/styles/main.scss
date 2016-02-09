@@ -332,19 +332,60 @@ a:hover {
     }
   }
   ul.product-docs-toc {
+    box-shadow: 0 -1px 0 #e5e5e5,0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
     list-style: none;
     padding: 0;
-    height: calc(100% - 100px);
-    margin: 0;
     overflow: auto;
+    margin: 25px;
     li {
       font-size: 14px;
       color: $dark-4;
       padding: 10px 15px;
       transition: background-color 150ms ease-in;
+      background-color: white;
+      margin-bottom: 2px;
+      position: relative;
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+      a {
+        color: $dark-4;
+      }
+      i {
+        position: absolute;
+        right: 0;
+        font-size: 18px;
+        top: 0px;
+        color: $dark-7;
+        height: 41px;
+        width: 41px;
+        border-left: 2px solid $dark-11;
+        text-align: center;
+        line-height: 41px;
+      }
       &:hover {
-        background-color: rgba(0,0,0,.05);
         cursor: pointer;
+      }
+      &.active {
+        font-weight: bold;
+      }
+      &.open {
+        padding-bottom: 0;
+      }
+    }
+  }
+  .product-docs-subnav {
+    list-style: none;
+    margin: 10px -15px 0 -15px !important;
+    border-top: 1px solid $dark-11;
+    padding: 15px 0 !important;
+    background-color: #fafafa !important;
+    li {
+      background: #fafafa !important;
+      padding: 5px 0 5px 40px !important;
+      a {
+        color: $dark-4;
       }
     }
   }

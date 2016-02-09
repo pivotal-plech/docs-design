@@ -72,54 +72,70 @@ var Subnav = React.createClass({
         </div>
         <div className="subnav">
 
-          <ul className="product-docs-toc hidden">
-            <li>
-              <a href="#/product/cloud_foundry">Getting Started with Pivotal Cloud Foundry®</a>
-            </li>
-            <li>
+          <ul className="product-docs-toc">
+            <li className="open">
               <a href="#">Pivotal Cloud Foundry® Docs Home</a>
-            </li>
-            <li>
-              <a href="#">Getting Started with Pivotal Cloud Foundry®</a>
+              <i className="fa fa-angle-up"></i>
+              <ul className="product-docs-subnav">
+                <li className="active">
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Getting Started</a>
+                </li>
+              </ul>
             </li>
             <li>
               <a href="#">PCF on Amazon Web Services (AWS)</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">PCF on OpenStack</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">PCF on vSphere and vCloud Air</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">Using Ops Manager</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">Elastic Runtime Concepts</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">Operating Elastic Runtime</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">Using the Apps Manager</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">Deploying Applications</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">Buildpacks</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">Custom Services</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">Creating PCF Product Tiles</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">Logging and Metrics</a>
+              <i className="fa fa-angle-down"></i>
             </li>
             <li>
               <a href="#">Release Notes and Known Issues</a>
+              <i className="fa fa-angle-down"></i>
             </li>
           </ul>
           <div className="docs-software-footer hidden">

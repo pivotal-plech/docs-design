@@ -110,19 +110,16 @@ var PageHeader = React.createClass({
               <InlineList spacing="l" className="mvn">
                 <ListItem className="mvn mln">
                   <span className="type-sm">
-                    <i className="fa-download fa mrm type-accent-5"></i>
-                    <a href="#">Download Product Files</a>
+                    <a href="#">Download</a>
                   </span>
                 </ListItem>
                 <ListItem className="mvn">
                   <span className="type-sm">
-                    <i className="fa-support fa mrm type-accent-5"></i>
-                    <a href="#">Submit Support Ticket</a>
+                    <a href="#">Ask for Help</a>
                   </span>
                 </ListItem>
                 <ListItem className="mvn">
                   <span className="type-sm">
-                    <i className="fa-question fa mrm type-accent-5"></i>
                     <a href="#">Knowledge Base</a>
                   </span>
                 </ListItem>
